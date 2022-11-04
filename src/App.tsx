@@ -10,14 +10,14 @@ function hello(){
 }
 // hello();
 
-function App() {
+function App(props:any) {
     console.log("App is rendering");
     return (
         <div>
             This is App component
 
-            <Accordion/>
-            <Accordion/>
+            <Accordion titleFromApp = {"Hello bro"}/>
+            <Accordion titleFromApp = {"Bye bro"}/>
             <R value = {0}/>
             <R value = {1}/>
             <R value = {2}/>
