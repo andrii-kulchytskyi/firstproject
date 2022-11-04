@@ -1,43 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Accordion from "./components/accordion/Accordion";
+import {Rating as R} from "./components/rating/Rating";
 
 
 function hello(){
-    debugger
+    console.log("Hello is rendering");
     alert("Heyy IT KAMASUTRA")
 }
 // hello();
 
 function App() {
+    console.log("App is rendering");
     return (
         <div>
             This is App component
+
+            <Accordion/>
+            <Accordion/>
+            <R value = {0}/>
+            <R value = {1}/>
+            <R value = {2}/>
+            <R value = {3}/>
+            <R value = {4}/>
+            <R value = {5}/>
         </div>
     );
 }
-
-function Rating() {
-    return (
-        <div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-        </div>
-    )
-}
-
-function Accordion(){
-    return <div>
-        <h3> Menu </h3>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>
-    </div>
-}
-
 export default App;
