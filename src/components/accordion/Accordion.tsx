@@ -1,22 +1,31 @@
 import React from "react";
 
-function Accordion(props:any){
+
+type AccordionType = {
+    title: string
+    collapsed: boolean
+}
+function Accordion(props: AccordionType) {
     console.log("Accordion is rendering");
     return (<>
-        <AccordionTitle titleFromAcc = {props.titleFromApp}/>
+        <AccordionTitle titleFrom={props.title}/>
         <AccordionBody/>
     </>)
 }
+type AccordionTitleType = {
+    titleFrom: string
 
-function AccordionTitle(props:any){
+}
+function AccordionTitle(props: AccordionTitleType) {
     console.log("AccordionTitle is rendering");
-    return(
+    return (
         <>
-            <h1> {props.titleFromAcc} </h1>
+            <h1> {props.titleFrom} </h1>
         </>
     );
 }
-function AccordionBody(){
+
+function AccordionBody() {
     console.log("AccordionBody is rendering");
     return (
         <>
@@ -28,4 +37,5 @@ function AccordionBody(){
         </>
     )
 }
+
 export default Accordion
