@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Accordion from "./components/accordion/Accordion";
-import {Rating as R} from "./components/rating/Rating";
 
 
 function hello() {
@@ -12,7 +11,12 @@ function hello() {
 // hello();
 
 function App() {
-    console.log("App is rendering");
+
+return <div>
+    <Accordion title={"Menu"} collapsed={true}/>
+    <Accordion title={"Users"} collapsed={false}/>
+
+</div>
 
 }
 

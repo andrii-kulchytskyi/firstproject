@@ -9,25 +9,25 @@ function Accordion(props: AccordionType) {
     console.log("Accordion is rendering");
     if(props.collapsed){
         return (<>
-            <AccordionTitle titleFrom={props.title}/>
+            <AccordionTitle titleValue={props.title}/>
         </>)
     }else{
         return (<>
-            <AccordionTitle titleFrom={props.title}/>
+            <AccordionTitle titleValue={props.title}/>
             <AccordionBody />
         </>)
     }
 
 }
 type AccordionTitleType = {
-    titleFrom: string
+    titleValue: string
 
 }
 function AccordionTitle(props: AccordionTitleType) {
     console.log("AccordionTitle is rendering");
     return (
         <>
-            <h1> {props.titleFrom} </h1>
+            <h1> {props.titleValue} </h1>
         </>
     );
 }
