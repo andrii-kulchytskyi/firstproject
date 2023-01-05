@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import Accordion from "./components/accordion/Accordion";
+import {Rating} from "./components/rating/Rating";
+import OnOff from "./OnOff/OnOff";
 
 
 function hello() {
@@ -12,11 +14,15 @@ function hello() {
 
 function App() {
 
-return <div>
-    <Accordion title={"Menu"} collapsed={true}/>
-    <Accordion title={"Users"} collapsed={false}/>
+    return <div>
+        <Accordion title={"Menu"} collapsed={true}/>
+        <Accordion title={"Users"} collapsed={false}/>
 
-</div>
+
+
+        <OnOff value={"on"}/>
+
+    </div>
 
 }
 
