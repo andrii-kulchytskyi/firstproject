@@ -5,24 +5,27 @@ type AccordionType = {
     title: string
     collapsed: boolean
 }
+
 function Accordion(props: AccordionType) {
     console.log("Accordion is rendering");
-    if(props.collapsed){
+    if (props.collapsed) {
         return (<>
             <AccordionTitle titleValue={props.title}/>
         </>)
-    }else{
+    } else {
         return (<>
             <AccordionTitle titleValue={props.title}/>
-            <AccordionBody />
+            <AccordionBody/>
         </>)
     }
 
 }
+
 type AccordionTitleType = {
     titleValue: string
 
 }
+
 function AccordionTitle(props: AccordionTitleType) {
     console.log("AccordionTitle is rendering");
     return (
