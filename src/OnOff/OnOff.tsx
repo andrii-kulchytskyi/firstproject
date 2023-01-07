@@ -1,15 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 
 type OnOffProps = {
-    value: "on" | "off"
+    on: boolean
 }
 
-const OnOff = (props: OnOffProps) => {
+const OnOff = () => {
+
+    let [on, setOn] = useState(false);
+
+    let styleOff = {
+        backgroundColor: on ? "red" : "white"
+    }
+    let styleOn = {
+        backgroundColor: !on ? "green" : "white"
+    }
     return (
+
         <div>
-        <text>{props.value == "on"}</text>
-        <text>{props.value == "off"}</text>
+            <button style={styleOn} onClick={() => setOn(true)}>ON</button>
+            <button style={styleOff} onClick={() => setOn(false)}>OFF</button>
         </div>
     );
 };

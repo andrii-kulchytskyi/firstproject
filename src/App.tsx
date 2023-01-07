@@ -15,12 +15,9 @@ function hello() {
 function App() {
 
     return <div>
-        <Accordion title={"Menu"} collapsed={true}/>
-        <Accordion title={"Users"} collapsed={false}/>
-
-
-
-        <OnOff value={"on"}/>
+        {/*<Accordion title={"Menu"} collapsed={true}/>*/}
+        {/*<Accordion title={"Users"} collapsed={false}/>*/}
+        <OnOff/>
 
     </div>
 
