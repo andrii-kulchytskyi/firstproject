@@ -1,18 +1,42 @@
-import React from "react";
+import React, {useState} from "react";
 
 
-type RatingPropsType = {
-    value: 0 | 1 | 2 | 3 | 4 | 5
-}
+// type RatingPropsType = {
+//     value: 0 | 1 | 2 | 3 | 4 | 5
+// }
 
-export function Rating(props: RatingPropsType) {
+export function Rating() {
+    let [rate, setRate] = useState(0)
+
     return (
         <div>
-            <Star selected={props.value > 1}/>
-            <Star selected={props.value > 2}/>
-            <Star selected={props.value > 3}/>
-            <Star selected={props.value > 4}/>
-            <Star selected={props.value > 5}/>
+            <Star selected={rate >= 1}/>
+            <button onClick={() => {
+                setRate(1)
+            }}>1
+            </button>
+            <Star selected={rate >= 2}/>
+            <button onClick={() => {
+                setRate(2)
+            }}>2
+            </button>
+            <Star selected={rate >= 3}/>
+            <button onClick={() => {
+                setRate(3)
+            }}>3
+            </button>
+            <Star selected={rate >= 4}/>
+            <button onClick={() => {
+                setRate(4)
+            }}>4
+            </button>
+            <Star selected={rate >= 5}/>
+            <button onClick={() => {
+                setRate(5)
+            }}>5
+            </button>
+
+
         </div>
     )
 

@@ -1,41 +1,41 @@
-import React from "react";
+import React, {useState} from "react";
 
 
-type AccordionType = {
+export type AccordionType = {
     title: string
-    collapsed: boolean
+    // collapsed: boolean
 }
 
-function Accordion(props: AccordionType) {
-    console.log("Accordion is rendering");
-    if (props.collapsed) {
-        return (<>
-            <AccordionTitle titleValue={props.title}/>
-        </>)
-    } else {
-        return (<>
-            <AccordionTitle titleValue={props.title}/>
-            <AccordionBody/>
-        </>)
-    }
+export function Accordion(props: AccordionType) {
 
+    let [collapsed, setCollapsed] = useState(false)
+
+    return (
+        <>
+            <AccordionTitle titleValue={props.title}/>
+            <button onClick={() => {
+                setCollapsed(!collapsed)
+            }}>TOGGLE
+            </button>
+            {collapsed && <AccordionBody/>}
+        </>)
 }
 
-type AccordionTitleType = {
+export  type AccordionTitleType = {
     titleValue: string
-
 }
 
-function AccordionTitle(props: AccordionTitleType) {
+export function AccordionTitle(props: AccordionTitleType) {
     console.log("AccordionTitle is rendering");
     return (
         <>
             <h1> {props.titleValue} </h1>
+
         </>
     );
 }
 
-function AccordionBody() {
+export function AccordionBody() {
     console.log("AccordionBody is rendering");
     return (
         <>
@@ -47,5 +47,3 @@ function AccordionBody() {
         </>
     )
 }
-
-export default Accordion

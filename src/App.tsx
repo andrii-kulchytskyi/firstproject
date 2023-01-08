@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import Accordion from "./components/accordion/Accordion";
 import {Rating} from "./components/rating/Rating";
 import OnOff from "./OnOff/OnOff";
+import {Accordion} from "./components/accordion/Accordion";
 
 
 function hello() {
@@ -18,6 +18,8 @@ function App() {
         {/*<Accordion title={"Menu"} collapsed={true}/>*/}
         {/*<Accordion title={"Users"} collapsed={false}/>*/}
         <OnOff/>
+        <Accordion title={"Menu"}/>
+        <Rating/>
 
     </div>
 
