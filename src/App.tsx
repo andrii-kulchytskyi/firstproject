@@ -8,10 +8,10 @@ function App() {
 
     let [rate, setRate] = useState<RatingPropsValueType>(0)
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
-    let [on, setOn] = useState(false);
+    let [on, setOn] = useState<boolean>(false);
 
     return <div>
-        <OnOff on={!on} onClickChange={setOn}/>
+        <OnOff onClickChange={setOn}/>
         <Accordion title={"Menu"} onClickCollapse={setAccordionCollapsed} collapsed={!accordionCollapsed}/>
         <Rating onClick={setRate} value={rate} selected={false}/>
 
