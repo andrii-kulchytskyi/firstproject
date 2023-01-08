@@ -3,23 +3,23 @@ import React, {useState} from 'react';
 
 type OnOffProps = {
     on: boolean
+    onClickChange: (isOn: boolean) => void
 }
 
-const OnOff = () => {
+const OnOff = (props: OnOffProps) => {
 
-    let [on, setOn] = useState(false);
 
     let styleOff = {
-        backgroundColor: on ? "red" : "white"
+        backgroundColor: props.on ? "red" : "white"
     }
     let styleOn = {
-        backgroundColor: !on ? "green" : "white"
+        backgroundColor: !props.on ? "green" : "white"
     }
     return (
 
         <div>
-            <button style={styleOn} onClick={() => setOn(true)}>ON</button>
-            <button style={styleOff} onClick={() => setOn(false)}>OFF</button>
+            <button style={styleOn} onClick={() => props.onClickChange(props.on)}>ON</button>
+            <button style={styleOff} onClick={() => props.onClickChange(props.on)}>OFF</button>
         </div>
     );
 };
