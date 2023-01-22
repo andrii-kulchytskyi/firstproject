@@ -19,3 +19,6 @@ export const A = () => {
         <Accordion title={"YEA BOY"} onClickCollapse={setCollapsed} collapsed={!collapsed}/>
     )
 }
+export const UncontrolledAccordion = () => {
+    let [collapsed, setCollapsed] = useState(false);
+}
