@@ -12,7 +12,7 @@ function App() {
 
     return <div>
         <OnOff onClickChange={setOn}/>
-        <Accordion title={"Menu"} onClickCollapse={setAccordionCollapsed} collapsed={!accordionCollapsed}/>
+        {/*<Accordion title={"Menu"} onClickCollapse={setAccordionCollapsed} collapsed={!accordionCollapsed}/>*/}
         <Rating onClick={setRate} value={rate} selected={false}/>
 
     </div>
