@@ -11,14 +11,18 @@ export default {
         backgroundColor: {control: 'color'},
     },
 }
-const onClickCallback=()=>action("Some item was clicked")
+const onClickCallback =  action("Some item was clicked")
 
 export const A = () => {
-    let [collapsed, setCollapsed] = useState(false);
+    let [collapsed, setCollapsed] = useState<boolean>(false);
 
     return (
         <div>
-            <Accordion title={"YEA BOY"} onClickCollapse={setCollapsed} collapsed={!collapsed} items={[{title: "Loveme", value:"1"},{title: "Ldasd", value:"2"},{title: "JJ", value:"3"},]} onClickDoIt={onClickCallback}/>
+            <Accordion title={"YEA BOY"} onClickCollapse={() => setCollapsed(!collapsed)} collapsed={!collapsed}
+                       items={[{title: "Loveme", value: "1"}, {title: "Ldasd", value: "2"}, {title: "JJ", value: "3"},]}
+                       onClick={onClickCallback}
+
+            />
         </div>
     )
 }
