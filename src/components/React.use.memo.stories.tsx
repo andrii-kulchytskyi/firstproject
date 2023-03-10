@@ -5,7 +5,7 @@ export default {
 }
 
 
-export const Example1 = () => {
+export const DifficultExample = () => {
     const [a, setA] = useState(3)
     const [b, setB] = useState(3)
 
@@ -24,7 +24,6 @@ export const Example1 = () => {
             resTempA = resTempA * i
         }
         return resTempA
-
     }, [b])
 
 
@@ -41,3 +40,35 @@ export const Example1 = () => {
     </div>
 }
 
+
+const UsersSecret = (props: { users: string[] }) => {
+    return <div>{props.users.map((u, i) => <div key={i}>{u}</div>)}</div>
+}
+const Users = React.memo(UsersSecret)
+
+export const HelpsToReactMemo = () => {
+
+    const [count, setCounter] = useState(0)
+    const [users, setUsers] = useState(["Andasdas", "asdasda", "plit"])
+    const filteredArray = useMemo(() => {
+        return users.filter(u => u.toLowerCase().includes("a"))
+    }, [users])
+
+    const onClickAddUser = () => {
+        const newUsers = [...users, "Sveta" + new Date().getTime()]
+        setUsers(newUsers)
+    }
+
+    return <>
+        <button onClick={() => {
+            setCounter(count + 1)
+        }}>+
+        </button>
+        <button onClick={() => {
+            onClickAddUser()
+        }}>add user
+        </button>
+        {count}
+        <Users users={filteredArray}/>
+    </>
+}

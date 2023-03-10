@@ -19,7 +19,6 @@ export const Example1 = () => {
     const onClickAddUser = () => {
         const newUsers = [...users, "Sveta" + new Date().getTime()]
         setUsers(newUsers)
-
     }
     return <>
         <button onClick={() => {
