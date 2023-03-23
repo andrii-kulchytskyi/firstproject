@@ -6,7 +6,6 @@ export default {
 
 
 export const Example1 = () => {
-
     const [count, setCounter] = useState(0)
     const generate = useMemo(() => count, [])
     return <>
