@@ -5,6 +5,9 @@ export default {
     title: 'React.clock.demo',
 }
 
-export const ExampleClock = () => {
-    return <Clock/>
+export const DigitalClock = () => {
+    return <Clock mode={'d'}/>
+}
+export const AnalogClock = () => {
+    return <Clock mode={'a'}/>
 }
